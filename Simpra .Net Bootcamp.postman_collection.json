@@ -1,0 +1,1502 @@
+{
+	"info": {
+		"_postman_id": "7fa17c91-1f15-4fac-934b-34dd53111892",
+		"name": "Simpra .Net Bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14710639"
+	},
+	"item": [
+		{
+			"name": "AuthController",
+			"item": [
+				{
+					"name": "CreateToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@admin.com\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/CreateToken",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"CreateToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTokenByRefresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"blEDEZt/x3P8b8GKkmjMsbGLVvHyUD73mU1yb4rYlDE=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/CreateTokenByRefresh",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"CreateTokenByRefresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RevokeRefreshToken",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"UeiWkM+/P+/haSv03KxEyRjVfSV8IYdSaDCCuh2Ec8A=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/RevokeRefreshToken",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"RevokeRefreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminController",
+			"item": [
+				{
+					"name": "CreateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"admi2\",\r\n  \"lastName\": \"admin2\",\r\n  \"userName\": \"admin2\",\r\n  \"email\": \"admin@gmail.com\",\r\n  \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Admin/CreateUser",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Admin",
+								"CreateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateAdminRoles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Admin/CreateUserRoles/admin2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Admin",
+								"CreateUserRoles",
+								"admin2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Admin/GetAllUsers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Admin",
+								"GetAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"update admin2\",\r\n  \"email\": \"string@gmail.com\",\r\n  \"firstName\": \"update admin2\",\r\n  \"lastName\": \"update admin2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Admin/UpdateUser?userId=67e4ee4f-fbba-448b-ae95-d73de77a0565",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Admin",
+								"UpdateUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67e4ee4f-fbba-448b-ae95-d73de77a0565"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"update admin22\",\r\n  \"email\": \"string@gmail.com\",\r\n  \"firstName\": \"update admin2\",\r\n  \"lastName\": \"update admin2\",\r\n  \"oldPassword\": \"admin123\",\r\n  \"newPassword\": \"admin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Admin/ChangePassword?userId=67e4ee4f-fbba-448b-ae95-d73de77a0565&oldPassword=admin123&newPassword=admin12345",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Admin",
+								"ChangePassword"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67e4ee4f-fbba-448b-ae95-d73de77a0565"
+								},
+								{
+									"key": "oldPassword",
+									"value": "admin123"
+								},
+								{
+									"key": "newPassword",
+									"value": "admin12345"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Admin/DeleteUser?userId=8628bd8b-493d-4ba9-b644-94fd37873339",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Admin",
+								"DeleteUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "8628bd8b-493d-4ba9-b644-94fd37873339"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UsersController",
+			"item": [
+				{
+					"name": "UserCreate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"user\",\r\n  \"lastName\": \"user\",\r\n  \"userName\": \"user\",\r\n  \"email\": \"user@gmail.com\",\r\n  \"password\": \"user123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Users/CreateUser",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Users",
+								"CreateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateUserRoles",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Users/CreateUserRoles/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Users",
+								"CreateUserRoles",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdlNWVmMDMwLWIyOWItNGYyNC1hNzBiLWRlYWNmMDUwYmEyNyIsImVtYWlsIjoidXNlckBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ1c2VyQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ1c2VyIiwianRpIjoiMzU4ZDJjY2QtNmQ2NC00YWM2LThkZDktNmRmNjFkZjNiYjZiIiwiYXVkIjoid3d3LmF1dGhzZXJ2ZXIuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoidXNlciIsIm5iZiI6MTY4NzYzNDgxOSwiZXhwIjoxNjg3NjM2NjE5LCJpc3MiOiJ3d3cuYXV0aHNlcnZlci5jb20ifQ.Lg9kO5qDFnIVdY9b72fAiBYdcLtrMe7IQmJIwepA96U",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Users/GetUser",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Users",
+								"GetUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CategoriesController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Categories/GetAll",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Categories",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Categories/GetById/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Categories",
+								"GetById",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductsByCategoryId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Categories/GetProductsByCategoryId/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Categories",
+								"GetProductsByCategoryId",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Kalemler\",\r\n  \"description\": \"Kalemler\",\r\n  \"picture\": \"string\",\r\n  \"products\": [\r\n    {\r\n      \"name\": \"kalem-1\",\r\n      \"unitPrice\": 10,\r\n      \"unitsInStock\": 10,\r\n      \"description\": \"kalem-1\",\r\n      \"isStatus\": true\r\n    },\r\n    {\r\n      \"name\": \"kalem-2\",\r\n      \"unitPrice\": 20,\r\n      \"unitsInStock\": 20,\r\n      \"description\": \"kalem-2\",\r\n      \"isStatus\": true\r\n    },\r\n    {\r\n      \"name\": \"kalem-3\",\r\n      \"unitPrice\": 30,\r\n      \"unitsInStock\": 30,\r\n      \"description\": \"kalem-3\",\r\n      \"isStatus\": false\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Categories/Add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Categories",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"description\": \"string\",\r\n  \"picture\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Categories/Update/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Categories",
+								"Update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Categories/Delete/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Categories",
+								"Delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductsController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Products/GetAll",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Products",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Products/GetById/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Products",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"unitPrice\": 0,\r\n  \"unitsInStock\": 0,\r\n  \"description\": \"string\",\r\n  \"isStatus\": true,\r\n  \"categories\": [\r\n    {\r\n      \"name\": \"string\",\r\n      \"description\": \"string\",\r\n      \"picture\": \"string\",\r\n      \"products\": [\r\n        \"string\"\r\n      ]\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Products/Add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Products",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"unitPrice\": 0,\r\n  \"unitsInStock\": 0,\r\n  \"description\": \"string\",\r\n  \"isStatus\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Products/Update/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Products",
+								"Update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Products/Delete/5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Products",
+								"Delete",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "KuponController",
+			"item": [
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/GetAll",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/GetById/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"GetById",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/GetAllByUserId?userId=67e4ee4f-fbba-448b-ae95-d73de77a0565",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"GetAllByUserId"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "67e4ee4f-fbba-448b-ae95-d73de77a0565"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByCode",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/GetByCode?code=76BAF415-3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"GetByCode"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "76BAF415-3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"67e4ee4f-fbba-448b-ae95-d73de77a0565\",\r\n  \"name\": \"TEST2\",\r\n  \"rate\": 10,\r\n  \"status\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/Add",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"Add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"93fb22c1-95be-4a2d-b584-c0ee7198fa63\",\r\n  \"name\": \"TEST1\",\r\n  \"rate\": 50,\r\n  \"status\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/Update/3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"Update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Kupon/Delete/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Kupon",
+								"Delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DigitalWallet",
+			"item": [
+				{
+					"name": "GetBalance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/DigitalWallet/GetBalance?userId=9cea63b7-b001-405a-b754-166f6caf8940",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"DigitalWallet",
+								"GetBalance"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "9cea63b7-b001-405a-b754-166f6caf8940"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddFunds",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"9cea63b7-b001-405a-b754-166f6caf8940\",\r\n  \"balance\": 500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/DigitalWallet/AddFunds",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"DigitalWallet",
+								"AddFunds"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveFunds",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/DigitalWallet/RemoveFunds?userId=9cea63b7-b001-405a-b754-166f6caf8940&amount=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"DigitalWallet",
+								"RemoveFunds"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "9cea63b7-b001-405a-b754-166f6caf8940"
+								},
+								{
+									"key": "amount",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BasketController",
+			"item": [
+				{
+					"name": "GetBasket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Baskets/GetBasket",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Baskets",
+								"GetBasket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveOrUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"9cea63b7-b001-405a-b754-166f6caf8940\",\r\n  \"discountCode\": \"string\",\r\n  \"basketItems\": [\r\n    {\r\n      \"quantity\": 10,\r\n      \"price\": 10,\r\n      \"productId\": 1,\r\n      \"productName\": \"string\",\r\n      \"basketId\": 0\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Baskets/SaveOrUpdate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Baskets",
+								"SaveOrUpdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Baskets/Delete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Baskets",
+								"Delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderController",
+			"item": [
+				{
+					"name": "GetOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Orders/GetOrders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Orders",
+								"GetOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{{{token}}}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderItems\": [\r\n    {\r\n      \"productId\": \"string\",\r\n      \"productName\": \"string\",\r\n      \"price\": 0\r\n    }\r\n  ],\r\n  \"address\": {\r\n    \"province\": \"string\",\r\n    \"district\": \"string\",\r\n    \"street\": \"string\",\r\n    \"zipCode\": \"string\",\r\n    \"line\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Orders/CreateOrder",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Orders",
+								"CreateOrder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://localhost:5001/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
